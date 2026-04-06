@@ -1,3 +1,4 @@
+// Smooth scroll navigation
 let navLinks = document.querySelectorAll(".navbar a");
 
 for (let i = 0; i < navLinks.length; i++) {
@@ -13,6 +14,7 @@ for (let i = 0; i < navLinks.length; i++) {
     });
 }
 
+// Scroll animations for sections
 window.addEventListener("scroll", function () {
     let sections = document.querySelectorAll("h2");
 
@@ -24,9 +26,27 @@ window.addEventListener("scroll", function () {
         }
     }
 
+    // Progress bar animation
     let scrollTop = document.documentElement.scrollTop;
     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     let scrolled = (scrollTop / height) * 100;
 
-    document.getElementById("progress").style.width = scrolled + "%";
+    let progressBar = document.getElementById("progress");
+    if (progressBar) {
+        progressBar.style.width = scrolled + "%";
+    }
 });
+
+// Container fade-in animation on page load
+window.addEventListener("load", function () {
+    let container = document.querySelector(".container");
+    if (container) {
+        container.style.animation = "fadeIn 0.8s ease";
+    }
+});
+
+// Add pulse effect to navbar on page load
+let navbar = document.querySelector(".navbar");
+if (navbar) {
+    navbar.style.animation = "slideInDown 0.6s ease";
+}

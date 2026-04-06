@@ -4,8 +4,10 @@ html {
 
 body {
     margin: 0;
-    font-family: Arial;
-    background: linear-gradient(to right, #74ebd5, #9face6);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
 }
 
 * {
@@ -16,62 +18,112 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 5px;
-    background: #3498db;
+    height: 6px;
+    background: linear-gradient(to right, #667eea, #764ba2);
     width: 0%;
     z-index: 1000;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
 }
 
 .navbar {
     position: sticky;
     top: 0;
-    background: #2c3e50;
-    padding: 10px;
+    background: rgba(44, 62, 80, 0.95);
+    padding: 15px 0;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    z-index: 999;
 }
 
 .navbar a {
     color: white;
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 8px 15px;
+    border-radius: 5px;
 }
 
 .navbar a:hover {
-    color: #74ebd5;
-    transform: scale(1.1);
+    color: #fff;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 .container {
-    width: 60%;
+    width: 70%;
     margin: 40px auto;
     background: white;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.8s ease;
 }
 
 h1 {
     text-align: center;
+    color: #333;
+    font-size: 2.5em;
+    margin: 20px 0;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInDown 0.8s ease;
 }
 
 .title {
     text-align: center;
-    color: #555;
+    color: #666;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #667eea, transparent);
+    margin: 30px 0;
 }
 
 .profile-pic {
     display: block;
-    margin: 15px auto;
-    width: 120px;
-    height: 120px;
+    margin: 25px auto;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    border: 4px solid #667eea;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    animation: fadeInZoom 0.8s ease, float 3s ease-in-out infinite;
 }
 
 h2 {
-    color: #3498db;
-    margin-top: 20px;
+    color: #667eea;
+    margin-top: 40px;
+    margin-bottom: 20px;
     opacity: 0;
     transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+    font-size: 1.8em;
+    border-left: 5px solid #667eea;
+    padding-left: 15px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #667eea, transparent);
 }
 
 .show {
@@ -80,19 +132,197 @@ h2 {
 }
 
 p {
-    line-height: 1.5;
+    line-height: 1.8;
+    animation: fadeIn 0.8s ease;
+    font-size: 1.05em;
+    color: #555;
 }
 
 ul {
-    background: #f0f8ff;
-    padding: 10px;
+    background: linear-gradient(135deg, #f5f7ff 0%, #f0f4ff 100%);
+    padding: 25px 30px;
+    border-radius: 12px;
+    list-style: none;
+    border-left: 4px solid #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+}
+
+li {
+    animation: slideInLeft 0.5s ease backwards;
+    font-size: 1.05em;
+    color: #333;
+    padding: 10px 0;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+li::before {
+    content: '✓';
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 1.2em;
+}
+
+li:nth-child(1) { animation-delay: 0.1s; }
+li:nth-child(2) { animation-delay: 0.2s; }
+li:nth-child(3) { animation-delay: 0.3s; }
+li:nth-child(4) { animation-delay: 0.4s; }
+li:nth-child(5) { animation-delay: 0.5s; }
+li:nth-child(6) { animation-delay: 0.6s; }
+
+li:hover {
+    transform: translateX(10px) scale(1.05);
+    color: #667eea;
+    padding-left: 10px;
 }
 
 a {
-    color: #2980b9;
+    color: #667eea;
     text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    position: relative;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #764ba2;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+a:after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    transition: width 0.3s ease;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        width: 80%;
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+        margin: 30px auto;
+    }
+    
+    h1 {
+        font-size: 1.6em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    .navbar a {
+        display: block;
+        margin: 8px 0;
+        padding: 10px;
+    }
+    
+    .navbar {
+        padding: 10px;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    
+    p {
+        font-size: 1em;
+    }
 }
