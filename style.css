@@ -1,0 +1,98 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(to right, #74ebd5, #9face6);
+}
+
+* {
+    transition: all 0.3s ease;
+}
+
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #3498db;
+    width: 0%;
+    z-index: 1000;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #2c3e50;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #74ebd5;
+    transform: scale(1.1);
+}
+
+.container {
+    width: 60%;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+    color: #555;
+}
+
+.profile-pic {
+    display: block;
+    margin: 15px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+h2 {
+    color: #3498db;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+p {
+    line-height: 1.5;
+}
+
+ul {
+    background: #f0f8ff;
+    padding: 10px;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
